@@ -9,6 +9,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
     padding: "5px",
     borderRadius: "5px",
     gap: "5px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   },
   label: {
     padding: "5px 15px",
@@ -21,6 +24,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     transition: "1s",
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px",
+      flex: "1",
     },
   },
   activColor: {

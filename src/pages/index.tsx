@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
 import { Toggle } from "../components/toggle/Toggle";
-import { Title } from "../components/Title";
 import { UserDetails } from "../services/UserDetails";
 import { Theme } from "@mui/material";
+import { Typography } from "../components/typography/Typography";
 
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
@@ -42,12 +42,12 @@ export const Home = () => {
     <>
       <div className={classes.root}>
         <div className={classes.panel}>
-          <Title className="text-center" fontWeight="bold">
+          <Typography variant="h2" className="text-center">
             On More Thing
-          </Title>
-          <Title className="text-center">
+          </Typography>
+          <Typography className="text-center">
             What's your vehical registration number or gagraging post code
-          </Title>
+          </Typography>
           <UserDetails />
         </div>
       </div>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Input } from "../components/form/Input";
-import { Title } from "../components/Title";
 import { Toggle } from "../components/toggle/Toggle";
 import { InfoOutlined } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
 import { Button } from "../components/form/Button";
+import { Typography } from "../components/typography/Typography";
 const useStyles = makeStyles(() => ({
   root: {
     display: "flex",
@@ -36,15 +36,12 @@ export const UserDetails = () => {
       </div>
 
       <div className={classes.inputDetails}>
-        <Title
-          style={{ position: "relative", textAlign: "center" }}
-          fontWeight="bold"
-        >
+        <Typography variant="h2" className="text-center">
           {toggleValue === "Postcode"
             ? `What's your postcode?`
             : "What's your vechical registration number?"}
           <InfoOutlined />
-        </Title>
+        </Typography>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Input
             style={{ width: "350px" }}
