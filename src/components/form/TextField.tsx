@@ -2,6 +2,7 @@ import { makeStyles } from "@mui/styles";
 import React, { useState } from "react";
 import ReportProblemIcon from "@mui/icons-material/ReportProblem";
 import { Theme } from "@mui/material";
+import { colors } from "../../assets/colors/colors";
 const useStyles = makeStyles<Theme>((theme) => {
   const { main } = theme.palette.primary;
   return {
@@ -17,7 +18,7 @@ const useStyles = makeStyles<Theme>((theme) => {
       left: "20px",
       lineHeight: "1",
       cursor: "text",
-      color: "#c7c7c7",
+      color: "#70727B",
       [theme.breakpoints.down("sm")]: {
         fontSize: "14px",
         top: "20px",
@@ -33,6 +34,7 @@ const useStyles = makeStyles<Theme>((theme) => {
       backgroundColor: "#F1F2F4",
       padding: "25px 35px 15px 20px",
       transition: "all 1s",
+      color: colors.darkBlue,
       [theme.breakpoints.down("sm")]: {
         fontSize: "14px",
         padding: "20px 30px 10px 15px",
@@ -65,7 +67,7 @@ const useStyles = makeStyles<Theme>((theme) => {
       [theme.breakpoints.down("sm")]: {
         fontSize: "10px",
         textAlign: "left",
-        padding: "0 18px",
+        padding: "0 16px",
       },
     },
     error: {
@@ -91,6 +93,7 @@ interface InputProps {
   isError?: boolean;
   onBlur?: (value: string) => void;
   style?: React.CSSProperties;
+  className?: string;
 }
 export const TextField: React.FC<InputProps> = ({
   value,
@@ -100,10 +103,11 @@ export const TextField: React.FC<InputProps> = ({
   isError,
   onBlur,
   style,
+  className,
 }) => {
   const classes = useStyles();
   return (
-    <div style={style}>
+    <div className={className} style={style}>
       <div className={classes.inputBox}>
         {isError && (
           <div className={classes.reportIcon}>
