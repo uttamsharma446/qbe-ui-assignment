@@ -1,6 +1,7 @@
+import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React, { MouseEvent } from "react";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     padding: "12px",
     fontSize: "14px",
@@ -8,11 +9,11 @@ const useStyles = makeStyles(() => ({
     border: "none",
     cursor: "pointer",
     fontWeight: "normal",
-    color: "#42526F",
+    color: theme.palette.primary.main,
     transition: "all 0.5s",
     "&:hover": {
-      backgroundColor: "#1F3254",
-      color: "#FFFFFF",
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.light,
     },
   },
 }));

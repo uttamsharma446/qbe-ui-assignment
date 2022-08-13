@@ -3,8 +3,9 @@ import { makeStyles } from "@mui/styles";
 import { Toggle } from "../components/toggle/Toggle";
 import { Title } from "../components/Title";
 import { UserDetails } from "../services/UserDetails";
+import { Theme } from "@mui/material";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     height: "100vh",
     width: "100vw",
@@ -19,7 +20,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
     padding: "30px 50px",
     gap: "10px",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: theme.palette.primary.light,
     border: "1px solid #c7c7c7",
     boxShadow: "1px 1px 6px -3px rgba(0,0,0,0.74)",
     // alignItems: "flex-center",

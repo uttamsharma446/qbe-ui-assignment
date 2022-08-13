@@ -1,7 +1,8 @@
+import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import { ToggleProps } from "./Props";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     border: "1px solid #9FA7B5",
     display: "flex",
@@ -20,8 +21,8 @@ const useStyles = makeStyles(() => ({
     transition: "1s",
   },
   activColor: {
-    backgroundColor: "#4E5D78",
-    color: "#FFFFFF",
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.light,
   },
 }));
 export const Toggle: React.FC<ToggleProps> = ({

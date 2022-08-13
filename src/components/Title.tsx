@@ -4,9 +4,9 @@ import React from "react";
 // interface StylesProps {
 //   fontWeight?: "normal" | "bold";
 // }
-const useStyles = makeStyles<Theme>(() => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
-    color: "#1F3254",
+    color: theme.palette.primary.main,
     fontSize: "16px",
     display: "flex",
     gap: "10px",

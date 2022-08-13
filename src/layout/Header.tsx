@@ -1,12 +1,13 @@
+import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import { Stepper } from "../components/stepper";
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     display: "flex",
     justifyContent: "space-between",
     padding: "15px 20px",
-    backgroundColor: "#14284B",
+    backgroundColor: theme.palette.secondary.main,
   },
   logo: {},
   step: {

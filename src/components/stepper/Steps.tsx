@@ -1,8 +1,9 @@
+import { Theme } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import { StepsData } from "./Props";
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     display: "flex",
     flexDirection: "column",
@@ -18,11 +19,11 @@ const useStyles = makeStyles(() => ({
       height: "10px",
       width: "100%",
       zIndex: 1,
-      borderBottom: "5px dotted red",
+      borderBottom: "5px dotted #949DAD",
     },
   },
   count: {
-    border: "1px solid",
+    border: "2px solid #949DAD",
     padding: "10px",
     height: "35px",
     width: "35px",
@@ -32,7 +33,7 @@ const useStyles = makeStyles(() => ({
     textAlign: "center",
     borderRadius: "100%",
     zIndex: 123,
-    backgroundColor: "blue",
+    backgroundColor: theme.palette.secondary.main,
   },
   title: {
     fontSize: "14px",
