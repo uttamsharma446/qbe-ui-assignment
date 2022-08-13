@@ -20,6 +20,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "0 10px 10px",
       flexDirection: "column",
+      gap: "10px",
     },
   },
   logo: {
