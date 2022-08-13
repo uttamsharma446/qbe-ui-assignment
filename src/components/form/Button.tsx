@@ -15,6 +15,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.light,
     },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
+    },
   },
 }));
 

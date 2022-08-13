@@ -7,11 +7,15 @@ import { Theme } from "@mui/material";
 
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
-    height: "100vh",
     width: "100vw",
     display: "flex",
     justifyContent: "center",
-    alignItems: "center",
+    padding: "30px 0",
+    [theme.breakpoints.down("sm")]: {
+      padding: "10px",
+      display: "flex",
+      justifyContent: "",
+    },
   },
   panel: {
     width: "600px",
@@ -23,7 +27,12 @@ const useStyles = makeStyles<Theme>((theme) => ({
     backgroundColor: theme.palette.primary.light,
     border: "1px solid #c7c7c7",
     boxShadow: "1px 1px 6px -3px rgba(0,0,0,0.74)",
-    // alignItems: "flex-center",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      padding: "30px 10px",
+      borderRadius: "5px",
+      border: "none",
+    },
   },
   useDetails: {},
 }));
@@ -33,8 +42,10 @@ export const Home = () => {
     <>
       <div className={classes.root}>
         <div className={classes.panel}>
-          <Title fontWeight="bold">On More Thing</Title>
-          <Title style={{ textAlign: "center" }}>
+          <Title className="text-center" fontWeight="bold">
+            On More Thing
+          </Title>
+          <Title className="text-center">
             What's your vehical registration number or gagraging post code
           </Title>
           <UserDetails />

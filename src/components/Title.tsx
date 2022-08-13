@@ -8,10 +8,10 @@ const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     color: theme.palette.primary.main,
     fontSize: "16px",
-    display: "flex",
-    gap: "10px",
-    justifyContent: "center",
     fontWeight: 400,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "14px",
+    },
   },
   bold: {
     fontWeight: 700,
@@ -23,18 +23,22 @@ interface Props {
   children?: React.ReactNode;
   fontWeight?: "normal" | "bold";
   style?: React.CSSProperties;
+  className?: string;
 }
 export const Title: React.FC<Props> = ({
   children,
   title,
   fontWeight,
   style,
+  className,
 }) => {
   const classes = useStyles();
   return (
     <div
       style={style}
-      className={`${classes.root} ${fontWeight === "bold" ? classes.bold : ""}`}
+      className={`${classes.root} ${
+        fontWeight === "bold" ? classes.bold : ""
+      } ${className}`}
     >
       {children || title}
     </div>

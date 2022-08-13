@@ -19,6 +19,9 @@ const useStyles = makeStyles<Theme>((theme) => ({
     cursor: "pointer",
     justifyContent: "center",
     transition: "1s",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10px",
+    },
   },
   activColor: {
     backgroundColor: theme.palette.primary.main,

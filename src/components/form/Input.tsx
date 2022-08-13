@@ -18,6 +18,11 @@ const useStyles = makeStyles<Theme>((theme) => {
       lineHeight: "1",
       cursor: "text",
       color: "#c7c7c7",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "14px",
+        top: "20px",
+        left: "15px",
+      },
     },
     input: {
       width: "100%",
@@ -26,14 +31,22 @@ const useStyles = makeStyles<Theme>((theme) => {
       outline: "none",
       fontSize: "16px",
       backgroundColor: "#F1F2F4",
-      padding: "25px 20px 15px",
+      padding: "25px 35px 15px 20px",
       transition: "all 1s",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "14px",
+        padding: "20px 30px 10px 15px",
+      },
 
       "&:focus + $label,&:not(:placeholder-shown)  + $label": {
         top: "8px",
         cursor: "none",
         color: main,
         fontSize: "12px",
+        [theme.breakpoints.down("sm")]: {
+          fontSize: "10px",
+          left: "15px",
+        },
       },
     },
     errorInput: {
@@ -49,9 +62,24 @@ const useStyles = makeStyles<Theme>((theme) => {
       fontWeight: "normal",
       color: main,
       padding: "0 10px",
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "10px",
+        textAlign: "left",
+        padding: "0 18px",
+      },
     },
     error: {
       color: "#A20000",
+    },
+    reportIcon: {
+      position: "absolute",
+      right: "10px",
+      top: "22px",
+
+      [theme.breakpoints.down("sm")]: {
+        right: "5px",
+        top: "15px",
+      },
     },
   };
 });
@@ -78,14 +106,13 @@ export const Input: React.FC<InputProps> = ({
     <div style={style}>
       <div className={classes.inputBox}>
         {isError && (
-          <ReportProblemIcon
-            sx={{
-              position: "absolute",
-              right: "20px",
-              top: "25px",
-              color: "#A20000",
-            }}
-          />
+          <div className={classes.reportIcon}>
+            <ReportProblemIcon
+              sx={{
+                color: "#A20000",
+              }}
+            />
+          </div>
         )}
         <input
           id="label"

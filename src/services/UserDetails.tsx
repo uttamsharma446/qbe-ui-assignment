@@ -36,7 +36,10 @@ export const UserDetails = () => {
       </div>
 
       <div className={classes.inputDetails}>
-        <Title fontWeight="bold">
+        <Title
+          style={{ position: "relative", textAlign: "center" }}
+          fontWeight="bold"
+        >
           {toggleValue === "Postcode"
             ? `What's your postcode?`
             : "What's your vechical registration number?"}

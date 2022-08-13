@@ -4,6 +4,5 @@ export interface StepsData {
 }
 export interface StepperProps {
   data: StepsData[];
-  onChange: (data: StepsData) => void;
-  value: StepsData[];
+  activeStep: number;
 }
