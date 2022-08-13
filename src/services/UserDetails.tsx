@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input } from "../components/form/Input";
+import { TextField } from "../components/form/TextField";
 import { Toggle } from "../components/toggle/Toggle";
 import { InfoOutlined } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
@@ -43,7 +43,7 @@ export const UserDetails = () => {
           <InfoOutlined />
         </Typography>
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <Input
+          <TextField
             style={{ width: "350px" }}
             value={inputValue}
             onChange={(value) => {
@@ -74,7 +74,7 @@ export const UserDetails = () => {
             margin: "20px 0",
           }}
         >
-          <Button>Countinue</Button>
+          <Button onClick={() => {}}>Countinue</Button>
         </div>
       </div>
     </div>

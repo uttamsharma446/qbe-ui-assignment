@@ -92,7 +92,7 @@ interface InputProps {
   onBlur?: (value: string) => void;
   style?: React.CSSProperties;
 }
-export const Input: React.FC<InputProps> = ({
+export const TextField: React.FC<InputProps> = ({
   value,
   onChange,
   label,

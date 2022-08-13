@@ -25,12 +25,12 @@ interface ButtonProps {
   name?: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
-  // onClick?:((event: MouseEvent<T, globalThis.MouseEvent>) => void)
+  onClick?: () => void;
 }
-export const Button: React.FC<ButtonProps> = ({ children, name }) => {
+export const Button: React.FC<ButtonProps> = ({ children, name, onClick }) => {
   const classes = useStyles();
   return (
-    <button onClick={(e) => {}} className={classes.root}>
+    <button onClick={(e) => onClick && onClick()} className={classes.root}>
       {children || name}
     </button>
   );
