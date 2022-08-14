@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { UserDetails } from "../services/UserDetails";
 import { Theme } from "@mui/material";
 import { Typography } from "../components/typography/Typography";
+import { Registeration } from "../services/Insurance/Registration";
 
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
@@ -41,13 +41,7 @@ export const Home = () => {
     <>
       <div className={classes.root}>
         <div className={classes.panel}>
-          <Typography variant="h2" className="text-center">
-            On More Thing
-          </Typography>
-          <Typography className="text-center">
-            What's your vehical registration number or gagraging post code
-          </Typography>
-          <UserDetails />
+          <Registeration />
         </div>
       </div>
     </>

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import { TextField } from "../components/form/TextField";
+import { TextField } from "../../components/form/TextField";
 // import { Toggle } from "../components/toggle/Toggle";
 import { InfoOutlined } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
-import { Button } from "../components/form/Button";
-import { Typography } from "../components/typography/Typography";
+import { Button } from "../../components/form/Button";
+import { Typography } from "../../components/typography/Typography";
 import { Theme } from "@mui/material";
-import { ToggleButtonGroup } from "../components/toggle/ToggleButtonGroup";
-import { ToggleButton } from "../components/toggle/ToggleButton";
+import { ToggleButtonGroup } from "../../components/toggle/ToggleButtonGroup";
+import { ToggleButton } from "../../components/toggle/ToggleButton";
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     display: "flex",
@@ -34,7 +34,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     flexWrap: "wrap",
   },
 }));
-export const UserDetails = () => {
+export const Registeration = () => {
   const classes = useStyles();
   const [inputValue, setInputValue] = useState<string>("");
   const [toggleValue, setToggleValue] = useState("registrationNumber");
@@ -42,6 +42,12 @@ export const UserDetails = () => {
 
   return (
     <div className={classes.root}>
+      <Typography variant="h2" className="text-center">
+        One More Thing
+      </Typography>
+      <Typography className="text-center">
+        What's your vehical registration number or gagraging post code
+      </Typography>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <ToggleButtonGroup onChange={setToggleValue} value={toggleValue}>
           <ToggleButton value="registrationNumber">
