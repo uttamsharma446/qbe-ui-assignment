@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { Toggle } from "../components/toggle/Toggle";
 import { UserDetails } from "../services/UserDetails";
 import { Theme } from "@mui/material";
 import { Typography } from "../components/typography/Typography";

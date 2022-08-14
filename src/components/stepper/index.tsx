@@ -1,10 +1,8 @@
 import { makeStyles } from "@mui/styles";
-import { height } from "@mui/system";
 import React from "react";
 import { StepperProps } from "./Props";
 import { Steps } from "./Steps";
 import { v4 as uuidv4 } from "uuid";
-import { colors } from "../../assets/colors/colors";
 import { MobileViewStep } from "./MobileViewStep";
 import { Theme } from "@mui/material";
 const useStyles = makeStyles<Theme>((theme) => ({

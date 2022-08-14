@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { TextField } from "../components/form/TextField";
-import { Toggle } from "../components/toggle/Toggle";
+// import { Toggle } from "../components/toggle/Toggle";
 import { InfoOutlined } from "@mui/icons-material";
 import { makeStyles } from "@mui/styles";
 import { Button } from "../components/form/Button";
 import { Typography } from "../components/typography/Typography";
 import { Theme } from "@mui/material";
+import { ToggleButtonGroup } from "../components/toggle/ToggleButtonGroup";
+import { ToggleButton } from "../components/toggle/ToggleButton";
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     display: "flex",
@@ -35,18 +37,18 @@ const useStyles = makeStyles<Theme>((theme) => ({
 export const UserDetails = () => {
   const classes = useStyles();
   const [inputValue, setInputValue] = useState<string>("");
-  const [toggleValue, setToggleValue] = useState("Registeration number");
+  const [toggleValue, setToggleValue] = useState("registrationNumber");
   const [isError, setIsError] = useState<boolean>(false);
 
   return (
     <div className={classes.root}>
       <div style={{ display: "flex", justifyContent: "center" }}>
-        <Toggle
-          firstLabel="Registeration number"
-          secondLabel="Postcode"
-          value={toggleValue}
-          onChange={setToggleValue}
-        />
+        <ToggleButtonGroup onChange={setToggleValue} value={toggleValue}>
+          <ToggleButton value="registrationNumber">
+            Registeration number
+          </ToggleButton>
+          <ToggleButton value="postcode">Postcode</ToggleButton>
+        </ToggleButtonGroup>
       </div>
 
       <div className={classes.inputDetails}>
