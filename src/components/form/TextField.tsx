@@ -128,6 +128,7 @@ export const TextField: React.FC<InputProps> = ({
           onChange={(e) => {
             onChange(e.target.value);
           }}
+          autoFocus={false}
         />
         <label className={`${classes.label} `} htmlFor="label">
           {label}

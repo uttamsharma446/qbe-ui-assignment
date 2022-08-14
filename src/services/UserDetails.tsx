@@ -79,7 +79,11 @@ export const UserDetails = () => {
                 setIsError(true);
               }
             }}
-            label={toggleValue}
+            label={
+              toggleValue === "registrationNumber"
+                ? "Registration Number"
+                : "Postcode"
+            }
             isError={isError}
           />
         </div>
