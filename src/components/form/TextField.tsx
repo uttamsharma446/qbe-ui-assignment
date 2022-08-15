@@ -124,7 +124,7 @@ export const TextField: React.FC<InputProps> = ({
           className={`${classes.input} ${isError ? classes.errorInput : ""}`}
           type="text"
           value={value}
-          placeholder=""
+          placeholder=" "
           onChange={(e) => {
             onChange(e.target.value);
           }}
