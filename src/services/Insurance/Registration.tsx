@@ -59,7 +59,7 @@ export const Registeration = () => {
 
       <div className={classes.inputDetails}>
         <Typography variant="h2" className={`${classes.infoText} text-center`}>
-          {toggleValue === "Postcode"
+          {toggleValue === "postcode"
             ? `What's your postcode?`
             : "What's your vechical registration number?"}
           <InfoOutlined />
