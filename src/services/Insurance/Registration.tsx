@@ -8,6 +8,8 @@ import { Typography } from "../../components/typography/Typography";
 import { Theme } from "@mui/material";
 import { ToggleButtonGroup } from "../../components/toggle/ToggleButtonGroup";
 import { ToggleButton } from "../../components/toggle/ToggleButton";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
     display: "flex",
@@ -32,26 +34,29 @@ const useStyles = makeStyles<Theme>((theme) => ({
     justifyContent: "center",
     gap: "10px",
     flexWrap: "wrap",
+    marginBottom: "12px",
   },
 }));
 export const Registeration = () => {
   const classes = useStyles();
+  const theme = useTheme();
   const [inputValue, setInputValue] = useState<string>("");
   const [toggleValue, setToggleValue] = useState("registrationNumber");
   const [isError, setIsError] = useState<boolean>(false);
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <div className={classes.root}>
       <Typography variant="h2" className="text-center">
-        One More Thing
+        One more thing
       </Typography>
       <Typography className="text-center">
-        What's your vehical registration number or gagraging post code
+        What's your vehical registration number or garaging postcode?
       </Typography>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <ToggleButtonGroup onChange={setToggleValue} value={toggleValue}>
           <ToggleButton value="registrationNumber">
-            Registeration number
+            Registration number
           </ToggleButton>
           <ToggleButton value="postcode">Postcode</ToggleButton>
         </ToggleButtonGroup>
@@ -74,8 +79,12 @@ export const Registeration = () => {
               setIsError(false);
             }}
             helperText={
-              toggleValue === "Postcode"
-                ? "Please enter the postcode where your car is garaged"
+              toggleValue === "postcode"
+                ? matches
+                  ? "Please enter the postcode"
+                  : "Please enter the postcode where your car is garaged"
+                : matches
+                ? "Please enter the registration number"
                 : "Please enter the registration of insured vehicle"
             }
             onBlur={(value) => {
@@ -87,7 +96,7 @@ export const Registeration = () => {
             }}
             label={
               toggleValue === "registrationNumber"
-                ? "Registration Number"
+                ? "Registration number"
                 : "Postcode"
             }
             isError={isError}

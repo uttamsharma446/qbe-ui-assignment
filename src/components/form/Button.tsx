@@ -3,12 +3,13 @@ import { makeStyles } from "@mui/styles";
 import React, { MouseEvent } from "react";
 const useStyles = makeStyles<Theme>((theme) => ({
   root: {
-    padding: "12px",
-    fontSize: "14px",
+    padding: "16px 28px",
+    fontSize: "16px",
     borderRadius: "100px",
     border: "none",
     cursor: "pointer",
     fontWeight: "normal",
+    textTransform: "capitalize",
     color: theme.palette.primary.main,
     transition: "all 0.5s",
     "&:hover": {
@@ -17,6 +18,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "12px",
+      padding: "12px 16px",
     },
   },
 }));
