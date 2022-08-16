@@ -100,7 +100,7 @@ export const Registeration = () => {
             margin: "20px 0",
           }}
         >
-          <Button onClick={() => {}}>Countinue</Button>
+          <Button onClick={() => {}}>continue</Button>
         </div>
       </div>
     </div>
