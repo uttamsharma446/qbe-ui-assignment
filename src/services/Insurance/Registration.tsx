@@ -51,7 +51,7 @@ export const Registeration = () => {
         One more thing
       </Typography>
       <Typography className="text-center">
-        What's your vehical registration number or garaging postcode?
+        What's your vehicle registration number or garaging postcode?
       </Typography>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <ToggleButtonGroup onChange={setToggleValue} value={toggleValue}>
@@ -66,7 +66,7 @@ export const Registeration = () => {
         <Typography variant="h2" className={`${classes.infoText} text-center`}>
           {toggleValue === "postcode"
             ? `What's your postcode?`
-            : "What's your vechical registration number?"}
+            : "What's your vechicle registration number?"}
           <InfoOutlined />
         </Typography>
         <div style={{ display: "flex", justifyContent: "center" }}>
